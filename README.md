@@ -23,10 +23,6 @@ If a manager selects Add New Product, it should allow the manager to add a compl
 
 #Video (in action)
 
-
-
-    https://asciinema.org/a/2PS39xoAnBSFywwUZNzJQc3ZK
-
-
+<a href="https://asciinema.org/a/2PS39xoAnBSFywwUZNzJQc3ZK" target="_blank"><img src="https://asciinema.org/a/2PS39xoAnBSFywwUZNzJQc3ZK.svg" /></a>
 
 
