@@ -1,0 +1,28 @@
+{
+  "name": "Bamazon",
+  "version": "1.0.0",
+  "description": "This app is an Amazon-like storefront with the MySQL. The app will take in orders from customers and deplete stock from the store's inventory.",
+  "main": "bamazonCustomer.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "init": "^0.1.2",
+    "inquirer": "^7.0.0",
+    "mysql": "^2.17.1",
+    "tty-table": "^2.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelajaneleung/Bamazon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angelajaneleung/Bamazon/issues"
+  },
+  "homepage": "https://github.com/angelajaneleung/Bamazon#readme"
+}
