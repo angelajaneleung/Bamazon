@@ -30,14 +30,14 @@ let formatTable = (rows) => {
       value: "product_name",
       alias: "Name",
       color: "green",
-      width: 20,
+      width: 25,
       align: "left"
     },
     {
       value: "price",
       alias: "Price ($)",
       color: "cyan",
-      width: 20,
+      width: 25,
       formatter: function (value) {
         let str = "$" + value.toFixed(2);
         return str;
@@ -76,12 +76,12 @@ const askQuestion = () => {
     {
       type: "list",
       message: "Select option!",
-      choices: ["View Products for Sale", "View Low Inventory", "Add to Inventory", "Add New Product", "Exit"],
+      choices: ["View Items", "View Low Inventory", "Add to Inventory", "Add New Item", "Exit"],
       name: "option"
     }
   ]).then(function (answers) {
     switch (answers.option) {
-      case "View Products for Sale":
+      case "View Items":
         viewProducts();
         break;
 
@@ -93,12 +93,12 @@ const askQuestion = () => {
         addInventory();
         break;
 
-      case "Add New Product":
+      case "Add New Item":
         addNewProducts();
         break;
 
       case "Exit":
-        console.log("\nBye bye!\n");
+        console.log("\nBye!\n");
         process.exit();
         connection.end();
         break;
@@ -120,7 +120,7 @@ const viewLowInventory = () => {
   connection.query(query, function (err, res) {
     if (err) throw err;
     if (res.length === 0) {
-      console.log("\nNo items are low in stock!\n");
+      console.log("\nNo items are low!\n");
     } else {
       formatTable(res);
     }
@@ -152,7 +152,7 @@ const updateProducts = () => {
         ],
         function (err, res) {
           if (err) throw err;
-          console.log("\nStock relenished!\n");
+          console.log("\nStock replenished!\n");
           setTimeout(askQuestion, 1000);
         }
       );
@@ -225,23 +225,23 @@ const addNewProducts = () => {
   inquirer.prompt([
     {
       type: "input",
-      message: "What is the name of the new product?",
+      message: "Name of the new product?",
       name: "newProduct"
     },
     {
       type: "list",
-      message: "What is the depeartment?",
+      message: "Which depeartment?",
       choices: ["Food", "Kitchen", "Books", "Apparel"],
       name: "newDepartment"
     },
     {
       type: "input",
-      message: "How much is it?",
+      message: "How much does the item cost?",
       name: "newPrice"
     },
     {
       type: "input",
-      message: "How many units do you want to add?",
+      message: "How many units would you like to add?",
       name: "newUnits"
     }
   ]).then(function (answers) {
@@ -261,7 +261,7 @@ const addNewProducts = () => {
       },
       function (err, res) {
         if (err) throw err;
-        console.log("\nProducts added successfully!\n");
+        console.log("\nItems successfully added!\n");
         setTimeout(askQuestion, 1000);
       });
 

@@ -24,14 +24,14 @@ let formatTable = (rows, val1, val2) => {
       value: "product_name",
       alias: "Name",
       color: "green",
-      width: 20,
+      width: 25,
       align: "left"
     },
     {
       value: "price",
       alias: "Price ($)",
       color: "cyan",
-      width: 20,
+      width: 25,
       formatter: function (value) {
         let str = "$" + value.toFixed(2);
         return str;
@@ -155,8 +155,7 @@ const updateInventory = () => {
       `UPDATE products SET ? WHERE ?`,
       [
         {
-          stock_quantity: stockQty - userQty,
-          product_sales: userQty * userPrice
+          stock_quantity: stockQty - userQty
         },
         {
           item_id: userSku
